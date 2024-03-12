@@ -1,0 +1,49 @@
+[font]
+size = 12.0
+
+[font.normal]
+family = "Monaco Nerd Font"
+#family = "Monaco for Powerline"
+#family = "Monaco iScript for Powerline"
+#family = "FantasqueSansM Nerd Font"
+
+[env]
+#WINIT_X11_SCALE_FACTOR = "1.0"
+
+[window]
+opacity = 0.90
+padding = { x = 2, y = 2 }
+#decorations = 'None'
+dynamic_title = false
+
+# Gnome (Gnome Terminal - Alex: background, foreground, and bright-for-normal)
+
+# Default colors
+[colors.primary]
+background = '#171421'
+foreground = '#d0cfcc'
+
+# Normal colors
+[colors.normal]
+black      = '#171421'
+#black      = '#5e5c64'
+red        = '#c01c28'
+green      = '#26a269'
+yellow     = '#a2734c'
+blue       = '#78aeed'
+magenta    = '#a347ba'
+cyan       = '#2aa1b3'
+white      = '#d0cfcc'
+
+# Bright colors
+[colors.bright]
+black      = '#5e5c64'
+#black      = '#171421'
+red        = '#f66151'
+green      = '#33d17a'
+yellow     = '#e9ad0c'
+blue       = '#2a7bde'
+magenta    = '#c061cb'
+cyan       = '#33c7de'
+white      = '#ffffff'
+

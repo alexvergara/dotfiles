@@ -1,0 +1,66 @@
+# ZSH -----------------
+
+# Path to your oh-my-zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
+
+# Active theme (Default)
+ZSH_THEME="robbyrussell"
+
+# Use case-sensitive completion.
+CASE_SENSITIVE="true"
+
+# Command execution timestamp shown in the history command output
+HIST_STAMPS="yyyy-mm-dd"
+
+# Plugins ------------
+
+# Enabled plugins
+plugins=(git vi-mode zsh-syntax-highlighting zsh-autosuggestions)
+
+# vi mode
+VI_MODE_SET_CURSOR=true
+VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true
+MODE_INDICATOR="%F{white}+%f"
+INSERT_MODE_INDICATOR="%F{blue}+%f"
+
+# Load ZSH
+source $ZSH/oh-my-zsh.sh
+
+# ---------------------
+
+
+
+# Utils ---------------
+
+# nvm (node version manager)
+
+#export NVM_DIR="$HOME/.nvm"
+#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# ---------------------
+
+
+
+# Aliases -------------
+
+# tmux start
+alias tm='tmux attach || tmux new-session'
+# tmux IDE
+#alias tmide='tmux attach || tmux new-session\; split-window -v -l 20%\; split-window -h -l 66%\; split-window -h -l 50%;'
+
+
+
+# Global --------------
+
+# Bind forward key to <Ctrl>-<Space>
+bindkey '^ ' forward-word
+
+# GTK theme (force gtk windows apply rules)
+export GTK_THEME='OSX-Arc-Shadow'
+
+# Final prompt
+PROMPT="${${(%):-%m}#1} $PROMPT"  # host ➜  curr-folder git:(branch) ✗
+
+# ---------------------
+

@@ -1,0 +1,160 @@
+.colors {
+  /* Default ?  Storm */
+  color: #1f2335; /* bg_dark */
+  color: #24283b; /* bg */
+  color: #292e42; /* bg_highlight */
+  color: #414868; /* terminal_black */
+  color: #c0caf5; /* fg */
+  color: #a9b1d6; /* fg_dark */
+  color: #3b4261; /* fg_gutter */
+  color: #545c7e; /* dark3 */
+  color: #565f89; /* comment */
+  color: #737aa2; /* dark5 */
+  color: #3d59a1; /* blue0 */
+  color: #7aa2f7; /* blue */
+  color: #7dcfff; /* cyan */
+  color: #2ac3de; /* blue1 */
+  color: #0db9d7; /* blue2 */
+  color: #89ddff; /* blue5 */
+  color: #b4f9f8; /* blue6 */
+  color: #394b70; /* blue7 */
+  color: #bb9af7; /* magenta */
+  color: #ff007c; /* magenta2 */
+  color: #9d7cd8; /* purple */
+  color: #ff9e64; /* orange */
+  color: #e0af68; /* yellow */
+  color: #9ece6a; /* green */
+  color: #73daca; /* green1 */
+  color: #41a6b5; /* green2 */
+  color: #1abc9c; /* teal */
+  color: #f7768e; /* red */
+  color: #db4b4b; /* red1 */
+  color: #6183bb; /* git change */
+  color: #449dab; /* git add */
+  color: #914c54; /* git delete */
+  color: #266d6a; /* gitSigns add */
+  color: #536c9e; /* gitSigns change */
+  color: #b2555b; /* gitSigns delete */
+
+  /* Night */
+  color: #1a1b26; /* Night: bg */
+  color: #16161e; /* Night: bg_dark */
+
+  /* Moon */
+  color: #1e2030; /* bg_dark */
+  color: #222436; /* bg */
+  color: #2f334d; /* bg_highlight */
+  color: #444a73; /* terminal_black */
+  color: #c8d3f5; /* fg */
+  color: #828bb8; /* fg_dark */
+  color: #3b4261; /* fg_gutter */
+  color: #545c7e; /* dark3 */
+  color: #7a88cf; /* comment */
+  color: #737aa2; /* dark5 */
+  color: #3e68d7; /* blue0 */
+  color: #82aaff; /* blue */
+  color: #86e1fc; /* cyan */
+  color: #65bcff; /* blue1 */
+  color: #0db9d7; /* blue2 */
+  color: #89ddff; /* blue5 */
+  color: #b4f9f8; /* blue6 */
+  color: #394b70; /* blue7 */
+  color: #fca7ea; /* purple */
+  color: #ff007c; /* magenta2 */
+  color: #c099ff; /* magenta */
+  color: #ff966c; /* orange */
+  color: #ffc777; /* yellow */
+  color: #c3e88d; /* green */
+  color: #4fd6be; /* green1 */
+  color: #41a6b5; /* green2 */
+  color: #4fd6be; /* teal */
+  color: #ff757f; /* red */
+  color: #c53b53; /* red1 */
+
+}
+
+
+/*
+   MOON
+  ret.comment = util.blend(ret.comment, ret.bg, "bb")
+  ret.git = {
+    change = util.blend(ret.blue, ret.bg, "ee"),
+    add = util.blend(ret.green, ret.bg, "ee"),
+    delete = util.blend(ret.red, ret.bg, "dd"),
+  }
+  ret.gitSigns = {
+    change = util.blend(ret.blue, ret.bg, "66"),
+    add = util.blend(ret.green, ret.bg, "66"),
+    delete = util.blend(ret.red, ret.bg, "aa"),
+  }
+  return ret
+end
+
+---@return ColorScheme
+function M.setup(opts)
+  opts = opts or {}
+  local config = require("tokyonight.config")
+
+  local style = config.is_day() and config.options.light_style or config.options.style
+  local palette = M[style] or {}
+  if type(palette) == "function" then
+    palette = palette()
+  end
+
+  -- Color Palette
+  ---@class ColorScheme: Palette
+  local colors = vim.tbl_deep_extend("force", vim.deepcopy(M.default), palette)
+
+  util.bg = colors.bg
+  util.day_brightness = config.options.day_brightness
+
+  colors.diff = {
+    add = util.darken(colors.green2, 0.15),
+    delete = util.darken(colors.red1, 0.15),
+    change = util.darken(colors.blue7, 0.15),
+    text = colors.blue7,
+  }
+
+  colors.git.ignore = colors.dark3
+  colors.black = util.darken(colors.bg, 0.8, "#000000")
+  colors.border_highlight = util.darken(colors.blue1, 0.8)
+  colors.border = colors.black
+
+  -- Popups and statusline always get a dark background
+  colors.bg_popup = colors.bg_dark
+  colors.bg_statusline = colors.bg_dark
+
+  -- Sidebar and Floats are configurable
+  colors.bg_sidebar = config.options.styles.sidebars == "transparent" and colors.none
+    or config.options.styles.sidebars == "dark" and colors.bg_dark
+    or colors.bg
+
+  colors.bg_float = config.options.styles.floats == "transparent" and colors.none
+    or config.options.styles.floats == "dark" and colors.bg_dark
+    or colors.bg
+
+  colors.bg_visual = util.darken(colors.blue0, 0.4)
+  colors.bg_search = colors.blue0
+  colors.fg_sidebar = colors.fg_dark
+  -- colors.fg_float = config.options.styles.floats == "dark" and colors.fg_dark or colors.fg
+  colors.fg_float = colors.fg
+
+  colors.error = colors.red1
+  colors.todo = colors.blue
+  colors.warning = colors.yellow
+  colors.info = colors.blue2
+  colors.hint = colors.teal
+
+  colors.delta = {
+    add = util.darken(colors.green2, 0.45),
+    delete = util.darken(colors.red1, 0.45),
+  }
+
+  config.options.on_colors(colors)
+  if opts.transform and config.is_day() then
+    util.invert_colors(colors)
+  end
+
+  return colors
+
+*/

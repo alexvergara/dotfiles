@@ -1,0 +1,40 @@
+/* Reset styling - https://www.reddit.com/r/firefox/comments/s5bnws/comment/hswufa9/ */
+
+/*
+.titlebar-min {
+  appearance: auto !important;
+  -moz-default-appearance: -moz-window-button-minimize !important;
+}
+
+.titlebar-max {
+  appearance: auto !important;
+  -moz-default-appearance: -moz-window-button-maximize !important;  
+}
+
+.titlebar-restore {
+  appearance: auto !important;
+  -moz-default-appearance: -moz-window-button-restore !important;
+}
+
+.titlebar-close .toolbarbutton-icon {
+  appearance: auto !important;
+  -moz-default-appearance: -moz-window-button-close !important;
+}
+
+.titlebar-button {
+  list-style-image: none !important;
+}
+*/
+
+
+#TabsToolbar {
+  margin-left: 7px !important;
+}
+
+.titlebar-close {
+  margin-right: -5px !important;*/
+}
+
+.titlebar-max, .titlebar-restore {
+  margin-left: 5px !important;
+}
